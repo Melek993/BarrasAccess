@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jabones Artesanales Naturales</title>
+
+<!-- Fuente moderna -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#333;
+}
+
+/* CABECERA */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+}
+
+nav h1{
+    color:#00a896;
+    font-weight:700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00a896;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(135deg,#00a896,#02c39a);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:600px;
+    margin-bottom:30px;
+    font-size:1.2rem;
+}
+
+.btn{
+    padding:15px 30px;
+    background:white;
+    color:#00a896;
+    border:none;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#028090;
+    color:white;
+}
+
+/* SECCIONES */
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2rem;
+    color:#00a896;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#f8f9fa;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer{
+    background:#00a896;
+    color:white;
+    padding:60px 10%;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.footer-container h3{
+    margin-bottom:15px;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    font-size:0.9rem;
+}
+
+/* RESPONSIVE NAV 
+@media(max-width:768px){
+    nav ul{
+        display:none;
+    }
+}*/
+
+/* BOTÓN FLotANTE DE WHATSAPP */
+.whatsapp-float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:30px;
+    right:30px;
+    background-color:#25D366;
+    color:#fff;
+    border-radius:50%;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    z-index:1001;
+    transition:0.3s;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+.whatsapp-float img{
+    width:35px;
+    height:35px;
+}
+
+/* ============================= */
+/* MENU HAMBURGUESA PREMIUM FIX */
+/* ============================= */
+
+/* Icono hamburguesa */
+.menu-toggle{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:5px;
+    z-index:1100;
+}
+
+.menu-toggle span{
+    width:25px;
+    height:3px;
+    background:#00a896;
+    border-radius:2px;
+    transition:0.4s;
+}
+
+/* Animación a X */
+.menu-toggle.active span:nth-child(1){
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Lista normal escritorio */
+.nav-list{
+    display:flex;
+    gap:30px;
+}
+
+/* ============================= */
+/* VERSIÓN MÓVIL */
+/* ============================= */
+
+@media(max-width:768px){
+
+    nav ul{
+        display:none; /* ocultamos menú escritorio */
+    }
+
+    .menu-toggle{
+        display:flex;
+    }
+
+    .nav-list{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100vh;
+        background:rgba(0,0,0,0.6);
+        backdrop-filter:blur(8px);
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+        gap:20px;
+
+        opacity:0;
+        pointer-events:none;
+        transition:0.3s ease;
+        z-index:1050;
+    }
+
+    .nav-list.active{
+        opacity:1;
+        pointer-events:auto;
+    }
+
+    .nav-list li{
+        list-style:none;
+        width:85%;
+        max-width:320px;
+    }
+
+    .nav-btn{
+        display:block;
+        width:100%;
+        text-align:center;
+        padding:16px 20px;
+        border-radius:50px;
+        background:white;
+        color:#00a896;
+        font-weight:600;
+        text-decoration:none;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        transition:0.3s ease;
+    }
+
+    .nav-btn:hover{
+        background:#00a896;
+        color:white;
+    }
+}
+
+/* Animaciones Hero */
+.hero h2, .hero p, .hero .btn{
+    opacity:0;
+    transform:translateY(20px);
+    transition:all 0.8s ease-out;
+}
+
+.hero h2.show{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:0.2s;
+}
+
+.hero p.show{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:0.5s;
+}
+
+.hero .btn.show{
+    opacity:1;
+    transform:translateY(0);
+    transition-delay:0.8s;
+    animation:buttonBounce 1s ease;
+}
+
+/* Efecto leve de bounce para botón */
+@keyframes buttonBounce{
+    0%{transform:translateY(20px);}
+    50%{transform:translateY(-5px);}
+    70%{transform:translateY(2px);}
+    100%{transform:translateY(0);}
+}
+
+/* Botones estilo premium */
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#00a896;
+    color:white;
+    font-weight:600;
+    border:none;
+    border-radius:50px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn:hover{
+    background:#02c39a;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn::after{
+    content:'';
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.1);
+    transition:0.3s;
+    border-radius:50px;
+    z-index:0;
+}
+
+.btn:hover::after{
+    background:rgba(255,255,255,0.2);
+}
+
+/* ============================= */
+/* CONTACTO PREMIUM */
+/* ============================= */
+
+.contact-section{
+    padding:140px 10% 100px 10%;
+    background:#f8f9fa;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    margin-top:60px;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.contact-info h3{
+    color:#00a896;
+    margin-bottom:10px;
+}
+
+.contact-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.contact-card p{
+    margin:8px 0;
+}
+
+.form-container{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:12px 15px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    outline:none;
+    transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#00a896;
+}
+
+textarea{
+    resize:none;
+}
+
+.map-container{
+    margin-top:60px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ============================= */
+/* ULTRA PREMIUM CONTACTO */
+/* ============================= */
+
+/* Fondo animado elegante */
+body{
+    background:linear-gradient(-45deg,#f8f9fa,#ffffff,#f1fefe,#ffffff);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Animación de aparición */
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Glassmorphism */
+.contact-card,
+.form-container{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.4);
+}
+
+/* Inputs premium */
+.form-group{
+    position:relative;
+}
+
+.form-group input,
+.form-group textarea{
+    padding:18px 15px 8px 15px;
+    background:#fff;
+}
+
+.form-group label{
+    position:absolute;
+    top:15px;
+    left:15px;
+    font-size:14px;
+    color:#777;
+    pointer-events:none;
+    transition:0.3s ease;
+    background:white;
+    padding:0 5px;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label{
+    top:-8px;
+    left:12px;
+    font-size:12px;
+    color:#00a896;
+}
+
+/* Botón con glow elegante */
+.btn{
+    position:relative;
+}
+
+.btn:hover{
+    box-shadow:0 0 15px rgba(0,168,150,0.6);
+    transform:translateY(-3px);
+}
+
+/* Mapa animación */
+.map-container{
+    transform:scale(0.95);
+    opacity:0;
+    transition:all 1s ease;
+}
+
+.map-container.show{
+    transform:scale(1);
+    opacity:1;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<header>
+   <nav>
+    <h1>ArtesanSoap</h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-btn">Inicio</a></li>
+        <li><a href="Productos.html" class="nav-btn">Productos</a></li>
+        <li><a href="#beneficios" class="nav-btn">Beneficios</a></li>
+        <li><a href="Contacto.html" class="nav-btn">Contacto</a></li>
+    </ul>
+</nav>
+</header>
+
+<section class="hero fade-in">
+    <h2>Pureza Natural en Cada Jabón</h2>
+    <p>Descubre nuestros jabones artesanales elaborados con ingredientes 100% naturales, diseñados para cuidar tu piel y el planeta.</p>
+    <a href="https://wa.me/5215512345678?text=Hola,%20quiero%20comprar%20jabones%20artesanales" target="_blank" class="btn">Comprar Ahora</a>
+</section>
+
+<section class="contact-section">
+
+    <h2 class="section-title">Contáctanos</h2>
+
+    <div class="contact-container">
+
+        <!-- INFORMACIÓN -->
+        <div class="contact-info fade-up">
+
+            <div class="contact-card">
+                <h3>Información de Contacto</h3>
+                <p><strong>Email:</strong> contacto@artesansoap.com</p>
+                <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+                <p><strong>Dirección:</strong> Av. Natural 123, Ciudad Verde, México</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                <p>Sábados: 10:00 AM - 3:00 PM</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+
+        </div>
+
+        <!-- FORMULARIO -->
+        <div class="form-container">
+            <h3 style="color:#00a896; margin-bottom:25px;">Envíanos un Mensaje</h3>
+
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder=" " required>
+                    <label>Nombre Completo</label>
+                </div>
+
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" required>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="5" placeholder=" " required></textarea>
+                    <label>Mensaje</label>
+                </div>
+
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+
+            <hr style="margin:40px 0; border:none; height:1px; background:#eee;">
+
+            <h3 style="color:#00a896; margin-bottom:25px;">Déjanos tu Opinión</h3>
+
+            <form>
+                <div class="form-group">
+                    <label>Tu Nombre</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tu Opinión</label>
+                    <textarea rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Publicar Opinión</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- MAPA -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.847742238!2d-99.1332!3d19.4326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f93f1e9f3f1b%3A0x2f1c1c1c1c1c1c1c!2sCiudad%20de%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1699999999999"
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+</section>
+
+<footer id="contacto">
+    <div class="footer-container">
+        <div>
+            <h3>Objetivos</h3>
+            <p>Promover el cuidado natural de la piel mediante productos artesanales ecológicos y sostenibles.</p>
+        </div>
+        <div>
+            <h3>Misión</h3>
+            <p>Ofrecer jabones naturales de alta calidad que respeten tu piel y el medio ambiente.</p>
+        </div>
+        <div>
+            <h3>Contacto</h3>
+            <p>Email: contacto@artesansoap.com</p>
+            <p>Tel: +00 123 456 789</p>
+            <p>Ubicación: Tu Ciudad, País</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 ArtesanSoap - Todos los derechos reservados
+    </div>
+</footer>
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/1234567890" target="_blank" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+<script>
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+
+mobileMenu.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+});
+
+// Animaciones Hero
+window.addEventListener('load', () => {
+    const heroTitle = document.querySelector('.hero h2');
+    const heroText = document.querySelector('.hero p');
+    const heroBtn = document.querySelector('.hero .btn');
+
+    heroTitle.classList.add('show');
+    heroText.classList.add('show');
+    heroBtn.classList.add('show');
+});
+
+// Cerrar menú al tocar opción
+const menuBtns = document.querySelectorAll('.nav-list .nav-btn');
+menuBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        navList.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    });
+});
+</script>
+<script>
+// Animación al hacer scroll
+const faders = document.querySelectorAll('.fade-up');
+
+const appearOptions = {
+    threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting){
+            return;
+        } else {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+</script>
+
+</body>
+</html>
