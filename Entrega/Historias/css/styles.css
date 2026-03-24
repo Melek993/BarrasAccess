@@ -1,0 +1,408 @@
+/* RESETEO GENERAL PARA TODOS LOS ELEMENTOS */
+*{
+margin:0; /* elimina márgenes por defecto */
+padding:0; /* elimina rellenos por defecto */
+box-sizing:border-box; /* evita problemas de tamaños */
+}
+
+/* ESTILO GENERAL DEL BODY */
+body{
+font-family:'Montserrat',sans-serif; /* fuente principal */
+background:#E2DFA2; /* color de fondo de la página */
+color:#333; /* color del texto */
+line-height:1.7; /* espacio entre líneas */
+}
+
+/* CABECERA */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+nav{
+    display:flex;              /* activa flexbox */
+    justify-content:space-between; /* separa logo y menú */
+    align-items:center;        /* centra verticalmente */
+    padding:15px 10%;
+}
+
+/* lista del menú */
+.nav-list{
+    list-style:none;           /* quita los puntos */
+    display:flex;              /* pone los li en línea */
+    gap:30px;                  /* espacio entre botones */
+    margin:0;
+    padding:0;
+}
+
+/* enlaces del menú */
+.nav-list li a{
+    text-decoration:none;      /* quita subrayado */
+    color:#333;                /* color inicial */
+    font-weight:700;           /* negrita */
+    transition:0.3s;
+}
+
+/* efecto al pasar el mouse */
+.nav-list li a:hover{
+    color:#ED5752;
+}
+
+/* Barra */
+.linea-cuerpo{
+    width: 100%;
+    height: 1cm; /* aunque recomiendo px */
+    background-color: #92AAC7;
+}
+
+
+/* MENU */
+nav{
+max-width:1100px; /* ancho máximo del menú */
+margin:auto; /* centra el menú */
+}
+
+/* LINK DEL MENU */
+nav a{
+text-decoration:none; /* quita el subrayado */
+font-weight:500; /* grosor de letra */
+color:#333; /* color del texto */
+}
+
+/* Lista normal escritorio */
+.nav-list{
+    display:flex;
+    gap:30px;
+}
+
+/* CONTENEDOR PRINCIPAL DE LA HISTORIA */
+.contenedor{
+max-width:900px; /* ancho ideal de lectura */
+margin:auto; /* centra el contenido */
+padding:40px 20px; /* espacio interno */
+}
+
+/* IMAGEN PRINCIPAL */
+.historia-img{
+width:100%; /* ocupa todo el ancho */
+border-radius:20px; /* bordes redondeados */
+box-shadow:0 15px 35px rgba(0,0,0,0.15); /* sombra elegante */
+}
+
+/* TITULO DE LA HISTORIA */
+h1{
+margin-top:30px; /* espacio arriba */
+color:#ED5752; /* color del título */
+font-family:'Playfair Display',serif; /* fuente literaria */
+font-size:40px; /* tamaño grande */
+text-align:center;
+}
+
+.historia{
+max-width:800px; /* limita el ancho del texto para que no sea demasiado largo al leer */
+margin:auto; /* centra el contenido horizontalmente en la pantalla */
+padding:40px; /* espacio interior alrededor del texto para que respire */
+}
+
+.texto-historia{
+
+font-size:18px; /* tamaño de letra cómodo para lectura */
+
+line-height:1.8; /* espacio entre líneas para que el texto no quede apretado */
+
+color:#333; /* color gris oscuro más suave que el negro */
+
+text-align:justify; /* alinea el texto como en los libros, bordes rectos a ambos lados */
+
+text-indent:30px; /* agrega sangría al inicio del párrafo como en novelas */
+
+margin-bottom:25px; /* espacio debajo del párrafo */
+
+font-family: Georgia, "Times New Roman", serif; /* tipografía estilo editorial/literatura */
+
+letter-spacing:0.3px; /* separa levemente las letras para mejorar la lectura */
+
+}
+
+/* PARRAFOS */
+/* PÁRRAFOS DE LA HISTORIA */
+/* PÁRRAFOS DE LA HISTORIA */
+.texto-historia{
+    font-size:18px; /* tamaño cómodo de lectura */
+    line-height:1.8; /* espacio entre líneas */
+    color:#333; /* color del texto */
+    text-align:justify; /* alineación tipo libro */
+    text-indent:30px; /* sangría en los párrafos */
+    margin-bottom:25px; /* espacio entre párrafos */
+    font-family: Georgia, "Times New Roman", serif; /* estilo editorial */
+}
+
+/* PRIMER PÁRRAFO SIN SANGRÍA 
+.texto-historia:first-of-type{
+    text-indent:0;
+}*/
+
+/* PRIMERA LETRA DEL PRIMER PÁRRAFO */
+.texto-historia:first-of-type::first-letter{
+    font-size:42px; /* letra grande */
+    font-weight:bold; /* negrita */
+    color:#ED5752; /* color del título */
+}
+
+
+/* CONTENEDOR BOTONES */
+.botones{
+margin-top:40px; /* espacio arriba */
+display:flex; /* permite alinear botones */
+flex-wrap:wrap; /* permite que bajen en celular */
+gap:15px; /* espacio entre botones */
+}
+
+/* BOTONES ESTILO PREMIUM */
+.btn{
+padding:15px 30px; /* tamaño interno del botón */
+background:#ED5752; /* color botón */
+color:black; /* color texto */
+text-decoration:none; /* quita subrayado */
+border-radius:30px; /* bordes redondeados */
+font-weight:500; /* grosor texto */
+box-shadow:0 10px 25px rgba(0,0,0,0.15); /* sombra elegante */
+transition:0.3s; /* animación suave */
+}
+
+/* EFECTO HOVER */
+.btn:hover{
+transform:translateY(-3px); /* levanta el botón */
+box-shadow:0 15px 35px rgba(0,0,0,0.2); /* sombra más fuerte */
+}
+
+/* SECCION COMENTARIOS */
+.comentarios{
+margin-top:60px; /* espacio arriba */
+padding:30px; /* espacio interno */
+background:white; /* fondo blanco */
+border-radius:20px; /* bordes redondeados */
+box-shadow:0 10px 30px rgba(0,0,0,0.1); /* sombra */
+}
+
+/* TITULO COMENTARIOS */
+.comentarios h2{
+margin-bottom:20px;
+font-family:'Playfair Display',serif;
+}
+
+/* CAMPOS DEL FORMULARIO */
+input, textarea{
+width:100%; /* ocupan todo el ancho */
+padding:12px; /* espacio interno */
+margin-bottom:15px; /* espacio entre campos */
+border-radius:10px; /* bordes redondeados */
+border:1px solid #ddd; /* borde suave */
+font-family:'Montserrat',sans-serif;
+}
+
+/* AREA DE TEXTO */
+textarea{
+height:120px; /* altura del comentario */
+resize:vertical; /* permite agrandar verticalmente */
+}
+
+/* BOTON FORMULARIO */
+button{
+padding:12px 25px;
+background:#ED5752;
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+
+/* Paginacion de lasHistorias <> */
+.navegacion{
+  text-align:center;
+  font-size:30px;
+}
+
+.navegacion a{
+  text-decoration:none;
+  margin:20px;
+}
+
+
+/* BLOQUE COMENTARIO PREMIUM */
+.comentario-premium {
+    display: flex;              /* Flexbox para organizar verticalmente */
+    flex-direction: column;     /* Apilar título y botón verticalmente */
+    align-items: center;        /* Centrado horizontal */
+    text-align: center;         /* Centrado de texto */
+    max-width: 550px;           /* Ancho ideal */
+    margin: 50px auto;          /* Centrado y espacio arriba/abajo */
+    padding: 40px 30px;         /* Espacio interior */
+    background: #a1be95;           /* Fondo blanco premium */
+    border-top: 4px solid #ED5752; /* Línea superior gruesa y color del título */
+    border-radius: 20px;        /* Bordes redondeados elegantes */
+    font-family: 'Yellowtail', cursive; /* Tipografía decorativa */
+    font-size: 22px;            /* Tamaño de la letra */
+    font-weight: 400;           /* Grosor elegante */
+    letter-spacing: 1px;        /* Espacio entre letras */
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15); /* Sombra premium */
+}
+
+/* H2 centrado */
+.comentario-premium h2 {
+    font-family: 'Playfair Display', serif; /* Elegante y moderno */
+    font-size: 28px;           /* Tamaño destacado */
+    font-weight: 700;          /* Negrita */
+    margin-bottom: 30px;       /* Espacio debajo del título */
+    color: #ED5752;            /* Color rojo premium */
+}
+
+
+.developer{
+    color:#000; /* color del texto */
+    font-size:20px; /* tamaño de la letra */
+    letter-spacing:1px; /* espacio entre letras */
+    font-family:'Open Sans', sans-serif; /* tipografía decorativa */
+    line-height:1.6; /* espacio entre líneas */
+    text-align:center; /* centra el texto */
+    max-width:900px; /* ancho máximo del texto */
+    margin:auto; /* centra el bloque horizontalmente */
+    padding:25px 20px; /* espacio interno arriba/abajo y lados */
+    border-top:1px solid rgba(0,0,0,0.15); /* línea superior decorativa */
+     font-weight: 300;                    /* Grosor */
+}
+
+/* CONTENEDOR DEL BOTÓN */
+.boton-correo-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:30px 0;
+  position:relative;
+  z-index:1000;
+}
+
+/* BOTÓN PREMIUM */
+.email-button-premium{
+  width:100px;
+  height:100px;
+  background: linear-gradient(135deg, #ED5752, #FF7A5C);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* EFECTO HOVER */
+.email-button-premium:hover{
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #FF7A5C, #ED5752);
+}
+
+/* SVG ICONO */
+.email-icon-premium{
+  width:70px;
+  height:70px;
+  fill:black;
+  transition: fill 0.35s ease, transform 0.35s ease;
+}
+
+/* BOTON CORREO */
+/* EFECTO HOVER ICONO */
+.email-button-premium:hover .email-icon-premium{
+  fill:#fffacd; /* color suave al pasar mouse */
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* BURBUJAS ANIMADAS (opcional para más premium) */
+.email-button-premium::before{
+  content:'';
+  position:absolute;
+  width:150%;
+  height:150%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  top:-25%;
+  left:-25%;
+  border-radius:50%;
+  opacity:0;
+  transition: all 0.5s ease;
+}
+
+.email-button-premium:hover::before{
+  opacity:1;
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .email-button-premium{
+    width:50px;
+    height:50px;
+  }
+  .email-icon-premium{
+    width:26px;
+    height:26px;
+  }
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+@media(max-width:768px){
+
+h1{
+font-size:32px; /* reduce tamaño título */
+}
+
+p{
+font-size:16px; /* reduce tamaño texto */
+}
+
+ .nav-list li a{
+        color: black !important;   /* fuerza el color visible */
+        font-size: 18px;           /* opcional: más grande */
+        font-weight: 600;
+    }
+
+
+
+}
+
+/* =========================== */
+/* Ajustes para pantallas pequeñas */
+/* =========================== */
+@media (max-width: 768px) {  /* tablets y móviles grandes */
+    h1{
+        font-size:32px;
+    }
+    .historia{
+        padding:30px;
+    }
+    .texto-historia{
+        font-size:16px;
+        text-indent:20px;
+    }
+}
+
+@media (max-width: 480px) {  /* móviles pequeños */
+    h1{
+        font-size:28px;
+    }
+    .historia{
+        padding:20px;
+    }
+    .texto-historia{
+        font-size:15px;
+        text-indent:15px;
+    }
+}
